@@ -22,7 +22,7 @@ namespace konversi_mata_uang
         public void tampilkanHasil()
         {
             double hasil = convertToRupiah();
-            Console.WriteLine($"Dollar >> ${nilai}");
+            Console.WriteLine($"Dollar >> $.{nilai}");
             Console.WriteLine($"Rupiah >> Rp.{hasil}");
         }
     }

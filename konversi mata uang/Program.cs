@@ -12,30 +12,40 @@ namespace konversi_mata_uang
         
         static void Main(string[] args)
         {
-            header();
-            Console.WriteLine("konversi mata uang dari :");
-            Console.WriteLine($"1. Dolar\n" + $"2. Rupiah" );
-            garis();
-            try
+            awal();
+            void awal()
             {
-                Console.Write("masukkan pilihan >> ");
-                int pilihan = Convert.ToInt32(Console.ReadLine());
-                if (pilihan == 1)
+                Console.Clear();
+                header();
+                Console.WriteLine("konversi mata uang dari :");
+                Console.WriteLine($"1. Dolar\n" + $"2. Rupiah");
+                garis();
+                try
                 {
-                    convertDolar();
-                }
-                else if (pilihan == 2)
-                {
+                    Console.Write("masukkan pilihan >> ");
+                    int pilihan = Convert.ToInt32(Console.ReadLine());
+                    if (pilihan == 1)
+                    {
+                        convertDolar();
+                    }
+                    else if (pilihan == 2)
+                    {
 
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    throw new Exception();
+                    Console.WriteLine("inputan tidak valid");
                 }
             }
-            catch (Exception)
+            void exit()
             {
-                Console.WriteLine("inputan tidak valid");
+                Console.Clear();
+                Console.WriteLine("terima kasih telah menggunakan program ini...");
             }
             void garis() 
             {
@@ -52,11 +62,21 @@ namespace konversi_mata_uang
                 Console.Clear();
                 header();
                 Dollar dolar = new Dollar();
-                Console.Write("masukkan nilai uang yang iongin dikonversikan >> ");
+                Console.Write("masukkan nilai uang yang ingin dikonversikan >> ");
                 dolar.Nilai = Convert.ToDouble(Console.ReadLine());
                 dolar.tampilkanHasil();
                 garis();
-                Console.WriteLine("apakah ingin convert lagi [y] or [n] >> ");
+                Console.Write("apakah ingin convert lagi [y] or [n] >> ");
+                char confirm = Convert.ToChar(Console.ReadLine());
+                if ( confirm == 'y' )
+                {
+                    awal();
+                }
+                else if (confirm == 'n')
+                {
+                    exit();
+                }
+
             } 
 
 

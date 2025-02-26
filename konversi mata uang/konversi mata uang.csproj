@@ -46,6 +46,7 @@
     <Compile Include="dollar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rupiah.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
