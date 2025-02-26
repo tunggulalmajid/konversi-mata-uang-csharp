@@ -30,7 +30,7 @@ namespace konversi_mata_uang
                     }
                     else if (pilihan == 2)
                     {
-
+                        convertRupiah();
                     }
                     else
                     {
@@ -62,9 +62,11 @@ namespace konversi_mata_uang
                 Console.Clear();
                 header();
                 Dollar dolar = new Dollar();
+
                 Console.Write("masukkan nilai uang yang ingin dikonversikan >> ");
                 dolar.Nilai = Convert.ToDouble(Console.ReadLine());
                 dolar.tampilkanHasil();
+
                 garis();
                 Console.Write("apakah ingin convert lagi [y] or [n] >> ");
                 char confirm = Convert.ToChar(Console.ReadLine());
@@ -76,16 +78,30 @@ namespace konversi_mata_uang
                 {
                     exit();
                 }
-
             } 
+            void convertRupiah()
+            {
+                Console.Clear();
+                header();
+                Rupiah rupiah = new Rupiah();
 
+                Console.Write("masukkan nilai uang yang ingin dikonversikan >> ");
+                rupiah.Nilai = Convert.ToDouble(Console.ReadLine());
+                rupiah.tampilkanHasil();
 
+                garis();
+                Console.Write("apakah ingin convert lagi [y] or [n] >> ");
+                char confirm = Convert.ToChar(Console.ReadLine());
+                if (confirm == 'y')
+                {
+                    awal();
+                }
+                else if (confirm == 'n')
+                {
+                    exit();
+                }
 
-
-
-
-
-
+            }
             Console.ReadLine();
         }
 
